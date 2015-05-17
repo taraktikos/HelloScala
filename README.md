@@ -1,2 +1,2 @@
 # HelloScala
-Scala hello word project
+Scala hello world project
