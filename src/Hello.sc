@@ -1,4 +1,4 @@
-import intro.MyModule
+import intro.MyModule._
 
 class CreditCard {
   def charge(price: Int): Unit = {
@@ -19,3 +19,5 @@ val r1 = x.reverse
 val r2 = x.reverse
 
 2.+(1)
+
+fib(4000)
