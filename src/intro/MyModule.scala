@@ -52,6 +52,9 @@ object MyModule {
   def curry[A, B, C](f: (A, B) => C): A => (B => C) =
     (a: A) => (b: B) => f(a, b)
 
+  def uncurry[A, B, C](f: A => B => C): (A, B) => C =
+    (a: A, b: B) => f(a)(b)
+
   def add(a: Int, b: Int): Int = {
     a + b
   }
@@ -59,6 +62,7 @@ object MyModule {
   def main(args: Array[String]): Unit = {
     val curryAdd = curry(add)
     println("Curry add " + curryAdd(2)(3))
+    println("unCurry add " + uncurry(curryAdd)(2, 3))
     println(formatResult("abs", -3, abs))
     println(formatResult("factorial", 4, factorial))
     println(isSorted(Array(7, 9, 14).reverse, (a1: Int, a2: Int) => a1 > a2))
