@@ -1,5 +1,4 @@
-import laziness._
+import state._
 
-val s = Stream(1, 2, 3)
-
-s.toListRecursive
+State.nonNegativeInt(State.Simple(1))
+State.nonNegativeInt(State.Simple(12))
